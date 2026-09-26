@@ -1,0 +1,25 @@
+# ローカル開発用の秘密値。コピーして .dev.vars にする（.dev.vars は gitignore 済み）
+# 本番は `wrangler secret put <NAME>` で登録する
+
+FIREBASE_PROJECT_ID=demo-tsugumi
+
+# エミュレータに向けるとき（両方空にすると本番 Firebase。そのときは下のサービスアカウントが必須）
+FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+FIREBASE_AUTH_EMULATOR_HOST=127.0.0.1:9099
+
+# wrangler.jsonc の vars にある本番の PUBLIC_FIREBASE_* をローカルでは上書きする（npm run preview 用）
+PUBLIC_FIREBASE_API_KEY=demo-key
+PUBLIC_FIREBASE_PROJECT_ID=demo-tsugumii
+PUBLIC_FIREBASE_AUTH_EMULATOR_HOST=127.0.0.1:9099
+
+# Firebase サービスアカウント（Firestore REST、カスタムトークン発行）
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=""
+
+# Cloudflare AI Gateway
+CF_ACCOUNT_ID=
+AI_GATEWAY_ID=
+CF_AIG_TOKEN=
+
+# Claude
+ANTHROPIC_API_KEY=

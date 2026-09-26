@@ -1,0 +1,106 @@
+rules_version = '2';
+
+// 権限（CLAUDE.md「データ」の「権限」）
+// - buyer：自分の trainees と、自分の placements とその配下だけ。他の候補者の placements は読めない
+// - seller：自社の companies（編集可）と、自社の placements とその配下（proposals の反応、gates、missions は書ける）
+// - admin/operator：すべて読める。companies・trainees の編集。users の変更は admin だけ
+// - auditLogs・aiLogs・AIの出力フィールドはサーバーだけが書く（サーバーはサービスアカウントなのでルールを通らない）
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function role() { return request.auth.token.role; }
+    function isAdmin() { return signedIn() && role() == 'admin'; }
+    function isStaff() { return signedIn() && (role() == 'admin' || role() == 'operator'); }
+    function isSeller() { return signedIn() && role() == 'seller'; }
+    function isBuyer() { return signedIn() && role() == 'buyer'; }
+    function myCompany() { return request.auth.token.companyId; }
+    function myTrainee() { return request.auth.token.traineeId; }
+    function changed() { return request.resource.data.diff(resource.data).affectedKeys(); }
+
+    // AI が書く項目は画面からは変えられない
+    function touchesCompanyAiFields() {
+      return changed().hasAny(['fieldSummary3', 'risks', 'roadmap']);
+    }
+
+    match /companies/{companyId} {
+      // 修行者は企業を探すので全社読める。社長は自社だけ
+      allow read: if isStaff() || isBuyer() || (isSeller() && resource.data.ownerUid == request.auth.uid);
+      allow create, delete: if isStaff();
+      allow update: if isStaff()
+        || (isSeller() && resource.data.ownerUid == request.auth.uid
+            && !touchesCompanyAiFields()
+            && !changed().hasAny(['ownerUid', 'slots']));
+    }
+
+    match /trainees/{traineeId} {
+      allow read: if isStaff() || (isBuyer() && resource.data.uid == request.auth.uid);
+      allow create, delete: if isStaff();
+      allow update: if isStaff()
+        || (isBuyer() && resource.data.uid == request.auth.uid && !changed().hasAny(['uid', 'aptitudeResult']));
+    }
+
+    match /placements/{placementId} {
+      function placement() { return get(/databases/$(database)/documents/placements/$(placementId)).data; }
+      function sellerOwns() { return isSeller() && resource.data.companyId == myCompany(); }
+      function buyerOwns() { return isBuyer() && resource.data.traineeId == myTrainee(); }
+      function sellerOwnsParent() { return isSeller() && placement().companyId == myCompany(); }
+      function buyerOwnsParent() { return isBuyer() && placement().traineeId == myTrainee(); }
+
+      allow read: if isStaff() || sellerOwns() || buyerOwns();
+      allow create, delete: if isStaff();
+      // ゲート判定（stage / nextGateAt / endReason）はサーバー API 経由で auditLogs に残すので画面からは変えない
+      allow update: if isStaff()
+        || (sellerOwns() && changed().hasOnly(['agreementSigned', 'lastReportSummary']));
+
+      match /reports/{reportId} {
+        allow read: if isStaff() || sellerOwnsParent() || buyerOwnsParent();
+        // 日報は修行者が書く。AI の項目（aiFeedback, perspectives, simpleWorkOnly）はサーバーだけ
+        allow create: if buyerOwnsParent()
+          && request.resource.data.keys().hasOnly(['date', 'body', 'createdAt']);
+        allow update, delete: if false;
+      }
+
+      match /proposals/{proposalId} {
+        allow read: if isStaff() || sellerOwnsParent() || buyerOwnsParent();
+        allow create: if buyerOwnsParent()
+          && request.resource.data.keys().hasOnly(['date', 'content', 'ownerReaction', 'reportId'])
+          && request.resource.data.ownerReaction == null;
+        // 社長は反応（採用・保留）だけ変えられる
+        allow update: if sellerOwnsParent() && changed().hasOnly(['ownerReaction']);
+        allow delete: if false;
+      }
+
+      match /gates/{gateId} {
+        allow read: if isStaff() || sellerOwnsParent() || buyerOwnsParent();
+        allow create: if sellerOwnsParent();
+        allow update, delete: if false;
+      }
+
+      match /missions/{missionId} {
+        allow read: if isStaff() || sellerOwnsParent() || buyerOwnsParent();
+        allow create, update, delete: if sellerOwnsParent();
+      }
+
+      match /assessment/{docId} {
+        allow read: if isStaff() || sellerOwnsParent() || buyerOwnsParent();
+        allow write: if false;
+      }
+    }
+
+    match /users/{uid} {
+      allow read: if isStaff() || (signedIn() && request.auth.uid == uid);
+      allow write: if isAdmin();
+    }
+
+    match /auditLogs/{id} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    match /aiLogs/{id} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+  }
+}

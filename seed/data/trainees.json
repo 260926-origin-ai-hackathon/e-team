@@ -1,0 +1,35 @@
+[
+	{
+		"id": "trainee-1",
+		"uid": "trainee-1-uid",
+		"name": "佐藤 美咲",
+		"university": "大阪公立大学",
+		"grade": "4年",
+		"hometown": "大阪府堺市",
+		"aptitudeResult": "現場志向・慎重",
+		"motivation": "地元の会社を残したい。実家の近くで働きたい。",
+		"managementGoal": "まだ決めていない。まず現場を知りたい。"
+	},
+	{
+		"id": "trainee-2",
+		"uid": "demo-buyer",
+		"name": "山本 拓真",
+		"university": "和歌山大学 大学院",
+		"grade": "修士1年（経済学研究科）",
+		"hometown": "和歌山県岩出市",
+		"aptitudeResult": "対人・改善志向",
+		"motivation": "祖父が大工だった。家を建てる仕事を、経営の側から残したい。",
+		"managementGoal": "5年以内に地方の工務店を継いで、職人が長く働ける会社にする。"
+	},
+	{
+		"id": "trainee-3",
+		"uid": "trainee-3-uid",
+		"name": "田中 悠人",
+		"university": "近畿大学",
+		"grade": "4年",
+		"hometown": "大阪府岸和田市",
+		"aptitudeResult": "企画志向",
+		"motivation": "経営インターンに興味があった。",
+		"managementGoal": "起業か承継かはまだ決めていない。"
+	}
+]

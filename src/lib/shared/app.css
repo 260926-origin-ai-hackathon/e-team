@@ -1,0 +1,78 @@
+/* 全画面共通の最小スタイル。社長画面は文字を大きくするので基準を 18px にしている */
+:root {
+	--bg: #faf8f4;
+	--fg: #1f2933;
+	--muted: #6b7280;
+	--line: #e5e0d8;
+	--accent: #b45309;
+	--accent-bg: #fff7ed;
+	--warn-bg: #fef3c7;
+	--radius: 12px;
+	font-family:
+		system-ui,
+		-apple-system,
+		'Hiragino Sans',
+		'Noto Sans JP',
+		sans-serif;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--fg);
+	background: var(--bg);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: var(--accent);
+}
+
+main {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 16px;
+}
+
+.tabs {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--line);
+	background: #fff;
+}
+
+.tabs a {
+	text-decoration: none;
+	padding: 8px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	color: var(--fg);
+	font-size: 0.95rem;
+}
+
+.tabs a[aria-current='page'] {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #fff;
+}
+
+.tabs .role {
+	margin-left: auto;
+	color: var(--muted);
+	font-size: 0.9rem;
+	align-self: center;
+}
+
+.placeholder {
+	border: 1px dashed var(--line);
+	border-radius: var(--radius);
+	padding: 24px;
+	color: var(--muted);
+	background: #fff;
+}

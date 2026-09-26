@@ -1,0 +1,32 @@
+[
+	{
+		"id": "demo-buyer",
+		"displayName": "山本 拓真（修行者）",
+		"role": "buyer",
+		"traineeId": "trainee-2",
+		"isDemo": true
+	},
+	{
+		"id": "demo-seller",
+		"displayName": "中村 正一（社長）",
+		"role": "seller",
+		"companyId": "company-1",
+		"isDemo": true
+	},
+	{ "id": "demo-admin", "displayName": "運営（管理者）", "role": "admin", "isDemo": true },
+	{ "id": "demo-operator", "displayName": "運営（一般）", "role": "operator", "isDemo": true },
+	{
+		"id": "trainee-1-uid",
+		"displayName": "佐藤 美咲",
+		"role": "buyer",
+		"traineeId": "trainee-1",
+		"isDemo": false
+	},
+	{
+		"id": "trainee-3-uid",
+		"displayName": "田中 悠人",
+		"role": "buyer",
+		"traineeId": "trainee-3",
+		"isDemo": false
+	}
+]

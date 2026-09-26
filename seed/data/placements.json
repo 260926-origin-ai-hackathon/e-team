@@ -1,0 +1,399 @@
+[
+	{
+		"id": "placement-1",
+		"companyId": "company-1",
+		"traineeId": "trainee-1",
+		"companyName": "中村工務店",
+		"traineeName": "佐藤 美咲",
+		"traineeUniversity": "大阪公立大学",
+		"stage": 1,
+		"startedAt": "2026-07-13",
+		"stageStartedAt": "2026-07-13",
+		"nextGateAt": "2026-09-13",
+		"agreementSigned": false,
+		"endReason": null,
+		"flags": ["over60", "simpleWorkOnly"],
+		"lastReportSummary": "掃除と材料運びをした。",
+		"reports": [
+			{
+				"id": "r01",
+				"date": "2026-08-20",
+				"body": "現場の掃除と材料運びをしました。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": true,
+				"createdAt": "2026-08-20T18:00:00+09:00"
+			},
+			{
+				"id": "r02",
+				"date": "2026-08-27",
+				"body": "資材の片付けをしました。特にありません。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": true,
+				"createdAt": "2026-08-27T18:00:00+09:00"
+			},
+			{
+				"id": "r03",
+				"date": "2026-09-03",
+				"body": "養生テープ貼りと掃除。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": true,
+				"createdAt": "2026-09-03T18:00:00+09:00"
+			},
+			{
+				"id": "r04",
+				"date": "2026-09-10",
+				"body": "材料運びと掃除をしました。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": true,
+				"createdAt": "2026-09-10T18:00:00+09:00"
+			},
+			{
+				"id": "r05",
+				"date": "2026-09-17",
+				"body": "掃除と材料運びをした。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": true,
+				"createdAt": "2026-09-17T18:00:00+09:00"
+			}
+		],
+		"proposals": [],
+		"gates": [],
+		"missions": [
+			{
+				"id": "m1",
+				"month": "2026-09",
+				"text": "朝礼で段取りを1つメモして日報に書く",
+				"done": false
+			}
+		],
+		"assessment": null
+	},
+	{
+		"id": "placement-2",
+		"companyId": "company-1",
+		"traineeId": "trainee-2",
+		"companyName": "中村工務店",
+		"traineeName": "山本 拓真",
+		"traineeUniversity": "和歌山大学 大学院",
+		"stage": 2,
+		"startedAt": "2026-06-01",
+		"stageStartedAt": "2026-08-01",
+		"nextGateAt": "2026-10-01",
+		"agreementSigned": true,
+		"endReason": null,
+		"flags": [],
+		"lastReportSummary": "泉北ハウジングの打ち合わせに同席。見積もりの項目を揃える提案が採用された。",
+		"reports": [
+			{
+				"id": "r01",
+				"date": "2026-06-05",
+				"body": "初日。大工の頭の川口さんの手元で、堺市南区の新築現場で土台の材料運びと墨付けの見学。川口さんが「図面どおりに切るな、現場で測れ」と言っていたのが印象に残った。",
+				"aiFeedback": {
+					"insight": "「図面どおりに切るな、現場で測れ」という川口さんの言葉は、社長の「図面より先にお客さんの暮らしを聞け」と同じ考え方です。",
+					"proposalDraft": "川口さんの現場の言葉を日報に集めて、若手大工向けの「現場の言い方集」を作る。",
+					"karteCandidates": [
+						{ "field": "values", "text": "図面どおりに切るな、現場で測れ（大工の頭・川口さん）" }
+					]
+				},
+				"perspectives": ["fit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-06-05T19:00:00+09:00"
+			},
+			{
+				"id": "r02",
+				"date": "2026-06-19",
+				"body": "リフォーム現場（和泉市・浴室）。施主の奥さんが「冬の脱衣所が寒い」と話していたので、大工の松本さんに伝えたら、断熱材の追加を社長に提案してくれた。社長が即答で「やろう」と。",
+				"aiFeedback": {
+					"insight": "「冬の脱衣所が寒い」という施主の一言を松本さんに渡し、断熱の追加提案につながった。暮らしを聞いて現場に渡す動きができています。",
+					"proposalDraft": "リフォームの初回訪問で「寒い・暑い・暗い・狭い」の4つを必ず聞くチェック欄を見積もり依頼書に足す。",
+					"karteCandidates": [
+						{ "field": "customers", "text": "リフォーム施主は暮らしの困りごと（寒さ）を雑談で話す" }
+					]
+				},
+				"perspectives": ["fit", "proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-06-19T19:00:00+09:00"
+			},
+			{
+				"id": "r03",
+				"date": "2026-07-03",
+				"body": "朝礼で社長が段取りを決めるのを見ていたが、社長が病院で遅れた日は職人が30分待っていた。川口さんは「前の日に聞いとけば動ける」と言っていた。",
+				"aiFeedback": {
+					"insight": "社長が遅れた日に職人が30分待った事実は、カルテの「朝の段取りは社長一人」がそのまま現場のロスになっている場面です。",
+					"proposalDraft": "前日の夕方に翌日の段取りを川口さんと社長で5分決めて、ホワイトボードに書いておく。",
+					"karteCandidates": [
+						{
+							"field": "fieldIssues",
+							"text": "社長不在の朝は職人が待つ（段取りが前日に共有されていない）"
+						},
+						{ "field": "ownerOnlyWork", "text": "朝の段取り決め" }
+					]
+				},
+				"perspectives": ["proposalFit", "fit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-07-03T19:00:00+09:00"
+			},
+			{
+				"id": "r04",
+				"date": "2026-07-17",
+				"body": "前日段取りのホワイトボードを始めて2週間。川口さんが「これはええ」と言ってくれた。60代の岡田さんは最初「書くのが面倒」と言っていたが、今は自分で書いている。",
+				"aiFeedback": {
+					"insight": "「書くのが面倒」と言っていた岡田さんが自分で書くようになった変化は、提案が現場に根づいた証拠です。",
+					"proposalDraft": "ホワイトボードの内容を写真で社長の携帯に送り、社長が現場に来なくても確認できるようにする。",
+					"karteCandidates": []
+				},
+				"perspectives": ["reputation", "persistence", "proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-07-17T19:00:00+09:00"
+			},
+			{
+				"id": "r05",
+				"date": "2026-07-31",
+				"body": "段階1の最終日。社長との面談で「見積もりを手伝ってみるか」と言われた。2か月、毎日現場に出て一度も遅刻しなかったことを川口さんが社長に伝えてくれていたらしい。",
+				"aiFeedback": {
+					"insight": "川口さんが「一度も遅刻しなかった」と社長に伝えていたことは、職人からの信頼が社長の判断に届いた場面です。",
+					"proposalDraft": "段階2の最初の週に、社長の見積もりを3件分、横で見て手順をメモに残す。",
+					"karteCandidates": []
+				},
+				"perspectives": ["persistence", "reputation", "commitment"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-07-31T19:00:00+09:00"
+			},
+			{
+				"id": "r06",
+				"date": "2026-08-14",
+				"body": "見積もりの下書きを初めて作った（和泉市・外壁塗装）。社長の見積もりは項目の書き方が案件ごとに違っていて、足場代が入っている案件と入っていない案件があった。社長に聞くと「頭に入っとる」と。",
+				"aiFeedback": {
+					"insight": "「足場代が入っている案件と入っていない案件がある」「頭に入っとる」は、見積もりが社長の記憶に依存している具体例です。",
+					"proposalDraft": "見積もりの項目を「仮設・解体・木工事・仕上げ・諸経費」の5区分に揃えたテンプレを作り、次の3件で試す。",
+					"karteCandidates": [
+						{ "field": "fieldIssues", "text": "見積もりの項目が案件ごとに違い、足場代の抜けがある" }
+					]
+				},
+				"perspectives": ["proposalFit", "commitment"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-08-14T19:00:00+09:00"
+			},
+			{
+				"id": "r07",
+				"date": "2026-08-28",
+				"body": "見積もりテンプレを3件で試した。社長が「これなら誰が見ても分かる」と言って採用してくれた。ハウスメーカーの下請け案件の粗利を出したら8%しかなく、自社受注は22%だった。",
+				"aiFeedback": {
+					"insight": "下請け8%・自社受注22%という数字を自分で出したことで、カルテの「下請けは利益が薄い」が判断できる材料になりました。",
+					"proposalDraft": "下請け案件は粗利15%を下回るなら断る、という基準を社長と決めて、次の依頼から適用する。",
+					"karteCandidates": [
+						{ "field": "fieldIssues", "text": "下請け案件の粗利は8%、自社受注は22%" }
+					]
+				},
+				"perspectives": ["proposalFit", "commitment"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-08-28T19:00:00+09:00"
+			},
+			{
+				"id": "r08",
+				"date": "2026-09-08",
+				"body": "泉北ハウジングとの打ち合わせに同席。担当の高橋さんは来春に異動するかもしれないと聞いた。社長は「高橋さんとは20年や」と言っていたが、後任のことは話していなかった。",
+				"aiFeedback": {
+					"insight": "「高橋さんは来春に異動するかもしれない」は、受注の半分を占める取引先の窓口が変わる兆しです。社長が後任の話をしていない点も含めて記録に残す価値があります。",
+					"proposalDraft": "高橋さんが在任のうちに、後任候補を交えた顔合わせを社長と一緒に申し入れる。",
+					"karteCandidates": [
+						{
+							"field": "customers",
+							"text": "泉北ハウジングの担当・高橋さん（20年）が来春異動の可能性"
+						}
+					]
+				},
+				"perspectives": ["commitment", "fit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-09-08T19:00:00+09:00"
+			},
+			{
+				"id": "r09",
+				"date": "2026-09-16",
+				"body": "岡田さんが腰を痛めて休んだ。若手の松本さんが造作を一人でやることになり、岡田さんに電話で聞きながら進めていた。岡田さんの型枠のやり方は松本さんしか知らない。",
+				"aiFeedback": {
+					"insight": "「岡田さんの型枠のやり方は松本さんしか知らない」は、カルテの「技能の受け渡しが進んでいない」が現実になった日です。",
+					"proposalDraft": "岡田さんが復帰したら、型枠の手順を松本さんが動画で撮って社内で共有する（月1回の勉強会の最初の題材にする）。",
+					"karteCandidates": [
+						{ "field": "fieldIssues", "text": "岡田さんの型枠の技能は松本さん以外に伝わっていない" }
+					]
+				},
+				"perspectives": ["fit", "proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-09-16T19:00:00+09:00"
+			},
+			{
+				"id": "r10",
+				"date": "2026-09-22",
+				"body": "泉北ハウジングの打ち合わせに再び同席。見積もりの項目を揃える提案が社長に採用されてから、高橋さんに「見積もりが分かりやすくなった」と言われた。帰りに社長から「お前、来年もおるか」と聞かれた。「います」と答えた。",
+				"aiFeedback": {
+					"insight": "高橋さんの「見積もりが分かりやすくなった」は、社内の改善が取引先にも届いた証拠です。社長の「来年もおるか」への「います」も、記録に残しておく言葉です。",
+					"proposalDraft": "段階3に向けて、リフォーム部門の受注一覧と粗利を月次で出す表を作り、10月から社長と一緒に見る。",
+					"karteCandidates": []
+				},
+				"perspectives": ["commitment", "reputation", "proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-09-22T19:00:00+09:00"
+			}
+		],
+		"proposals": [
+			{
+				"id": "q1",
+				"date": "2026-07-04",
+				"content": "前日の夕方に翌日の段取りを川口さんと社長で5分決めて、ホワイトボードに書いておく。",
+				"ownerReaction": "adopted",
+				"reportId": "r03"
+			},
+			{
+				"id": "q2",
+				"date": "2026-08-15",
+				"content": "見積もりの項目を「仮設・解体・木工事・仕上げ・諸経費」の5区分に揃えたテンプレを作り、次の3件で試す。",
+				"ownerReaction": "adopted",
+				"reportId": "r06"
+			},
+			{
+				"id": "q3",
+				"date": "2026-08-29",
+				"content": "下請け案件は粗利15%を下回るなら断る、という基準を社長と決めて、次の依頼から適用する。",
+				"ownerReaction": "hold",
+				"reportId": "r07"
+			},
+			{
+				"id": "q4",
+				"date": "2026-09-17",
+				"content": "岡田さんが復帰したら、型枠の手順を松本さんが動画で撮って社内で共有する。",
+				"ownerReaction": null,
+				"reportId": "r09"
+			}
+		],
+		"gates": [
+			{
+				"id": "g1",
+				"stage": 1,
+				"decision": "next",
+				"ownerComment": "2か月、休まず来た。川口が「ええ子や」と言うのは珍しい。見積もりを触らせてみる。",
+				"at": "2026-07-31T17:00:00+09:00"
+			}
+		],
+		"missions": [
+			{
+				"id": "m1",
+				"month": "2026-09",
+				"text": "泉北ハウジングの打ち合わせに2回同席する",
+				"done": true
+			},
+			{ "id": "m2", "month": "2026-09", "text": "見積もりの下書きを5件作る", "done": true },
+			{ "id": "m3", "month": "2026-09", "text": "改善提案を1つ出す", "done": true }
+		],
+		"assessment": {
+			"generatedAt": "2026-09-23T09:00:00+09:00",
+			"source": "seed",
+			"items": [
+				{
+					"id": "fit",
+					"finding": "初日に川口さんの「図面どおりに切るな、現場で測れ」を書き留め、施主の「冬の脱衣所が寒い」を松本さんに渡して断熱提案につなげています。現場の言葉を拾って動かす様子が続いています。",
+					"evidenceDates": ["2026-06-05", "2026-06-19", "2026-09-16"]
+				},
+				{
+					"id": "persistence",
+					"finding": "段階1の2か月間、一度も遅刻せずに現場に出たことを川口さんが社長に伝えています。段階2でも見積もりの下書きを5件、打ち合わせ同席を2回と、9月のミッションを全部終えています。",
+					"evidenceDates": ["2026-07-31", "2026-07-17"]
+				},
+				{
+					"id": "proposalFit",
+					"finding": "前日段取りのホワイトボードは「書くのが面倒」と言った岡田さんが自分で書くようになり、見積もりテンプレは社長が「これなら誰が見ても分かる」と採用しました。提案が現場で使われています。",
+					"evidenceDates": ["2026-07-03", "2026-07-17", "2026-08-28"]
+				},
+				{
+					"id": "reputation",
+					"finding": "川口さんが「一度も遅刻しなかった」と社長に伝え、岡田さんはホワイトボードを自分で書くようになっています。取引先の高橋さんからも「見積もりが分かりやすくなった」と言われました。",
+					"evidenceDates": ["2026-07-31", "2026-07-17", "2026-09-22"]
+				},
+				{
+					"id": "commitment",
+					"finding": "下請け8%・自社受注22%の粗利を自分で出し、高橋さんの異動の兆しを社長より先に記録しています。社長の「来年もおるか」に「います」と答えています。",
+					"evidenceDates": ["2026-08-28", "2026-09-08", "2026-09-22"]
+				}
+			]
+		}
+	},
+	{
+		"id": "placement-3",
+		"companyId": "company-1",
+		"traineeId": "trainee-3",
+		"companyName": "中村工務店",
+		"traineeName": "田中 悠人",
+		"traineeUniversity": "近畿大学",
+		"stage": "ended",
+		"startedAt": "2026-03-02",
+		"stageStartedAt": "2026-03-02",
+		"nextGateAt": "2026-05-01",
+		"agreementSigned": false,
+		"endReason": "rejected",
+		"flags": [],
+		"lastReportSummary": "SNSでの集客を提案したが、現場の人手が足りないと言われた。",
+		"reports": [
+			{
+				"id": "r01",
+				"date": "2026-03-06",
+				"body": "初日。現場を見学した。SNSで施工事例を発信したら集客できると思う。",
+				"aiFeedback": null,
+				"perspectives": ["proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-03-06T19:00:00+09:00"
+			},
+			{
+				"id": "r02",
+				"date": "2026-03-20",
+				"body": "InstagramとTikTokのアカウント案を作った。社長は「今は現場の人手が足りん」と言っていた。",
+				"aiFeedback": null,
+				"perspectives": ["proposalFit"],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-03-20T19:00:00+09:00"
+			},
+			{
+				"id": "r03",
+				"date": "2026-04-03",
+				"body": "現場には行かず、事務所で集客の企画書を作った。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-04-03T19:00:00+09:00"
+			},
+			{
+				"id": "r04",
+				"date": "2026-04-17",
+				"body": "企画書を社長に出した。反応は薄かった。",
+				"aiFeedback": null,
+				"perspectives": [],
+				"simpleWorkOnly": false,
+				"createdAt": "2026-04-17T19:00:00+09:00"
+			}
+		],
+		"proposals": [
+			{
+				"id": "q1",
+				"date": "2026-03-21",
+				"content": "InstagramとTikTokで施工事例を毎週発信して集客する。",
+				"ownerReaction": "hold",
+				"reportId": "r02"
+			}
+		],
+		"gates": [
+			{
+				"id": "g1",
+				"stage": 1,
+				"decision": "stop",
+				"ownerComment": "現場に出ずに企画ばかりやった。うちは職人の会社や。集客より先に、職人と仕事してほしかった。",
+				"at": "2026-05-01T17:00:00+09:00"
+			}
+		],
+		"missions": [],
+		"assessment": null
+	}
+]

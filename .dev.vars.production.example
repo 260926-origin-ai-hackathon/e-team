@@ -1,0 +1,20 @@
+# 本番用の秘密値。コピーして .dev.vars.production にする（gitignore 済み。コミットしない）
+#   npm run secrets:prod   → この中身を wrangler secret に一括登録
+#   npm run seed:prod      → 本番 Firestore / Auth にデモ用データとユーザーを入れる
+#   npm run ai:check:prod  → Claude と AI Gateway の実呼び出しを確かめる
+# エミュレータの HOST はここに書かない（書くと本番に向かない）
+
+FIREBASE_PROJECT_ID=
+
+# サービスアカウント鍵の JSON の client_email と private_key。
+# private_key は "..." で囲み、改行は \n のまま1行で貼る
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=""
+
+# Cloudflare AI Gateway（CF_AIG_TOKEN は認証付きゲートウェイにしたときだけ）
+CF_ACCOUNT_ID=
+AI_GATEWAY_ID=
+CF_AIG_TOKEN=
+
+# Claude
+ANTHROPIC_API_KEY=

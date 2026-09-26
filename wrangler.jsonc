@@ -1,0 +1,31 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "tsugumi",
+	"compatibility_date": "2026-09-25",
+	"compatibility_flags": ["nodejs_compat"],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"workers_dev": true,
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	// Workers AI（Jev: typesafe/jev を env.AI.run で呼ぶ）
+	"ai": {
+		"binding": "AI"
+	},
+	// 秘密でない設定値。秘密は `wrangler secret put` と .dev.vars（.dev.vars.example 参照）
+	// PUBLIC_FIREBASE_* は Firebase のウェブアプリの設定（公開値）。画面側が $env/dynamic/public で読む
+	"vars": {
+		"DECIDE_PROVIDER": "jev",
+		"DEMO_MODE": "true",
+		"FIREBASE_PROJECT_ID": "tsugumii",
+		"PUBLIC_FIREBASE_API_KEY": "AIzaSyDGlnmdRZOcDeVpTLU_0pO0csU-CKZZdAE",
+		"PUBLIC_FIREBASE_AUTH_DOMAIN": "tsugumii.firebaseapp.com",
+		"PUBLIC_FIREBASE_PROJECT_ID": "tsugumii",
+		"PUBLIC_FIREBASE_APP_ID": "1:30659151500:web:e41a81f88169eb8d45dda9"
+	}
+}
